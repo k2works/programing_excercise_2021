@@ -105,3 +105,5 @@ dist
 
 public
 .vercel
+
+__pycache__
