@@ -2,14 +2,17 @@ import unittest
 
 
 class Money:
+    YEN = 'JPY'
+    DOLLAR = 'USD'
+
     def __init__(self, amount, currency) -> None:
         self.amount = amount
         self.currency = currency
 
     def __str__(self) -> str:
-        if self.currency == 'JPY':
+        if self.currency == Money.YEN:
             return f'¥{self.amount}'
-        elif self.currency == 'USD':
+        elif self.currency == Money.DOLLAR:
             return f'${self.amount}'
         else:
             return f'{self.amount}{self.currency}'
@@ -28,9 +31,9 @@ class Money:
 
 class TestMoney(unittest.TestCase):
     def setUp(self) -> None:
-        self.千円 = Money(1000, 'JPY')
-        self.一万円 = Money(10000, 'JPY')
-        self.千ドル = Money(1000, 'USD')
+        self.千円 = Money(1000, Money.YEN)
+        self.一万円 = Money(10000, Money.YEN)
+        self.千ドル = Money(1000, Money.DOLLAR)
 
     def test_金額を表示する(self):
         self.assertEqual(str(self.千円), '¥1000')
@@ -40,8 +43,8 @@ class TestMoney(unittest.TestCase):
         self.assertEqual(str(self.千ドル), '$1000')
 
     def test_金額を比較する(self):
-        self.assertEqual(self.千円, Money(1000, 'JPY'))
-        self.assertNotEqual(self.千円, Money(1000, 'USD'))
+        self.assertEqual(self.千円, Money(1000, Money.YEN))
+        self.assertNotEqual(self.千円, Money(1000, Money.DOLLAR))
 
     def test_通貨を保持する(self):
         財布 = {self.千円}
@@ -49,10 +52,10 @@ class TestMoney(unittest.TestCase):
         self.assertFalse(self.千ドル in 財布)
 
     def test_金額を計算する(self):
-        二千円 = self.千円.add(Money(1000, 'JPY'))
-        self.assertEqual(二千円, Money(2000, 'JPY'))
+        二千円 = self.千円.add(Money(1000, Money.YEN))
+        self.assertEqual(二千円, Money(2000, Money.YEN))
         with self.assertRaises(ValueError, msg='通貨が異なります'):
-            self.千円.add(Money(1000, 'USD'))
+            self.千円.add(Money(1000, Money.DOLLAR))
 
 
 unittest.main(argv=[''], verbosity=2, exit=False)
