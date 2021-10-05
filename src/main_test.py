@@ -38,8 +38,6 @@ class TestMoney(unittest.TestCase):
     def test_金額を表示する(self):
         self.assertEqual(str(self.千円), '¥1000')
         self.assertEqual(str(self.一万円), '¥10000')
-
-    def test_外貨金額を表示する(self):
         self.assertEqual(str(self.千ドル), '$1000')
 
     def test_金額を比較する(self):
