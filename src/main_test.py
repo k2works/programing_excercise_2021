@@ -17,6 +17,9 @@ class Money:
     def __eq__(self, o: object) -> bool:
         return self.amount == o.amount and self.currency == o.currency
 
+    def __hash__(self) -> int:
+        return hash((self.amount, self.currency))
+
 class TestMoney(unittest.TestCase):
     def setUp(self) -> None:
         self.千円 = Money(1000, 'JPY')
@@ -33,5 +36,11 @@ class TestMoney(unittest.TestCase):
     def test_金額を比較する(self):
         self.assertEqual(self.千円, Money(1000, 'JPY'))
         self.assertNotEqual(self.千円, Money(1000, 'USD'))
+
+    def test_通貨を保持する(self):
+        財布 = {self.千円}
+        self.assertTrue(self.千円 in 財布)
+        self.assertFalse(self.千ドル in 財布)
+
 
 unittest.main(argv=[''], verbosity=2, exit=False)
