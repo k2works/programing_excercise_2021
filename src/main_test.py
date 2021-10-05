@@ -14,16 +14,16 @@ class Money:
         else:
             return f'{self.amount}{self.currency}'
 
-    def __eq__(self, o: object) -> bool:
-        return self.amount == o.amount and self.currency == o.currency
+    def __eq__(self, other: object) -> bool:
+        return self.amount == other.amount and self.currency == other.currency
 
     def __hash__(self) -> int:
         return hash((self.amount, self.currency))
 
-    def add(self, o: object) -> object:
-        if self.currency != o.currency:
+    def add(self, other: object) -> object:
+        if self.currency != other.currency:
             raise ValueError('通貨が異なります')
-        return Money(self.amount + o.amount, self.currency)
+        return Money(self.amount + other.amount, self.currency)
 
 
 class TestMoney(unittest.TestCase):
