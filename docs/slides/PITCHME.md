@@ -25,13 +25,6 @@ marp: true
 
 # 荒ぶる四天王
 
-<!--
-_color: white
-_footer: 'Photo by Benjamin Rascoe on Unsplash'
--->
-
-- ![bg](https://pbs.twimg.com/media/DeHo-lNVMAMtVf3.jpg)
-
 ---
 
 ## 荒ぶる四天王
@@ -61,30 +54,20 @@ _footer: 'Photo by Benjamin Rascoe on Unsplash'
 - 納期
 - スコープ
 
-  ![bg right:70%](https://i2.wp.com/bookwiz.me/wordpress/wp-content/uploads/2020/03/1584158002-2930e9a7fc91ec02186b24f15b1941cd.jpg?resize=768%2C485&ssl=1)
-
 ---
 
 # 武器と型
 
-<!--
-_color: black
-_footer: 'Photo by Benjamin Rascoe on Unsplash'
--->
-
-- ![bg](https://pics.prcm.jp/2e36ea2c33855/82980379/png/82980379_480x379.png)
-
 ---
 
-# 武器と型
+## 武器と型
 
 強敵と戦うにはレベルにあった武器が必要
 
-## ![bg right:40%](https://manga-more.com/wp-content/uploads/2018/07/img_1856.jpg)
-
 ---
 
-# 武器と型
+
+## 武器と型
 
 > 今日のソフトウェア開発の世界において絶対になければならない 3 つの技術的な柱があります。
 > 三本柱と言ったり、三種の神器と言ったりしていますが、それらは
@@ -100,15 +83,13 @@ _footer: 'Photo by Benjamin Rascoe on Unsplash'
 > — https://t-wada.hatenablog.jp/entry/clean-code-that-works
 ---
 
-# 武器と型
+## 武器と型
 
 武器を扱うには技術が必要、そして技術には先人が培ってきた型が存在する
 
-## ![bg right:50%](https://i0.wp.com/mannga-brothers.com/wp-content/uploads/2018/08/IMG_0970.jpg?resize=660%2C740&ssl=1)
-
 ---
 
-# 武器と型
+## 武器と型
 
 **テスト駆動開発の呼吸**
 
@@ -119,7 +100,7 @@ _壱ノ型 テストファースト_
 > 使用者のレベルにより便利にも不便にもなる終わりの始まりの型。
 ---
 
-# 武器と型
+## 武器と型
 
 **テスト駆動開発の呼吸**
 
@@ -129,7 +110,7 @@ _弐ノ型 仮実装_
 > 詳細な設計ができていない時点でも実装を進めるきっかけを作るに有効。
 ---
 
-# 武器と型
+## 武器と型
 
 **テスト駆動開発の呼吸**
 
@@ -139,7 +120,7 @@ _参ノ型 三角測量_
 > 複雑な条件を一般化する時に本領を発揮でき、慎重に記述されたテストコードは強力な防壁となり仕様変更の嵐からプロダクトコードを守る。
 ---
 
-# 武器と型
+## 武器と型
 
 **テスト駆動開発の呼吸**
 
@@ -150,7 +131,7 @@ _肆ノ型 リファクタリング_
 > 開発者のレベルが高いほど水流のごとく流れるようなリファクタリングとなり、開発と区別がつかなくなる。
 ---
 
-# 武器と型
+## 武器と型
 
 **テスト駆動開発の呼吸**
 
@@ -163,34 +144,23 @@ _伍ノ型 明白な実装_
 
 # 達人開発者への道
 
-<!--
-_color: white
-_footer: 'Photo by Benjamin Rascoe on Unsplash'
--->
-
-- ![bg](https://kimetu.work/wp-content/uploads/2020/04/%E5%86%A8%E5%B2%A1%E7%BE%A9%E5%8B%87_%E7%94%BB%E5%83%8F_2-624x1024.jpg)
-
 ---
 
-# 達人開発者への道
+## 達人開発者への道
 
 知識は実践によってのみ自らの血肉となる
 
 > もう、教えることはない。後はお前しだいだ。お前が儂の教えたことを消化できるかどうか
-## ![bg right:40%](https://i0.wp.com/bookwiz.me/wordpress/wp-content/uploads/2020/03/1584841965-ac83c3758ba398c1d6640136245f85cf.jpg?fit=600%2C315&ssl=1)
-
 ---
 
-# 達人開発者への道
+## 達人開発者への道
 
 実践の積み重ねが感覚を養う
 
 > プログラムが壊れるときはいつもコードの不吉な匂いがする
-## ![bg left:40%](https://livedoor.blogimg.jp/thedeb/imgs/b/c/bc5c9314.jpg)
-
 ---
 
-# 達人開発者への道
+## 達人開発者への道
 
 テスト駆動開発もソフトウェア開発アプローチの一つの流派
 
@@ -200,15 +170,13 @@ _footer: 'Photo by Benjamin Rascoe on Unsplash'
 
 ---
 
-# 達人開発者への道
+## 達人開発者への道
 
 > Good Design Is Easier to Change Than Bad Design: A thing is well designed if it adapts to the people who use it. For code, that means it must adapt by changing. (The Pragmatic Programmer)
 > 良い設計は悪い設計より簡単に変更ができる
 ---
 
 # おわり
-
-## ![bg right:70%](https://pbs.twimg.com/media/DbdTmWXUQAAiqwI.jpg)
 
 ---
 
@@ -221,4 +189,3 @@ _footer: 'Photo by Benjamin Rascoe on Unsplash'
 - [新装版 リファクタリング―既存のコードを安全に改善する― (OBJECT TECHNOLOGY SERIES)](https://www.amazon.co.jp/%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E2%80%95%E6%97%A2%E5%AD%98%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%AE%89%E5%85%A8%E3%81%AB%E6%94%B9%E5%96%84%E3%81%99%E3%82%8B%E2%80%95-OBJECT-TECHNOLOGY-Martin-Fowler/dp/427405019X/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=)
 - [リファクタリング(第 2 版): 既存のコードを安全に改善する (OBJECT TECHNOLOGY SERIES)](https://www.amazon.co.jp/%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0-%E7%AC%AC2%E7%89%88-%E6%97%A2%E5%AD%98%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%AE%89%E5%85%A8%E3%81%AB%E6%94%B9%E5%96%84%E3%81%99%E3%82%8B-OBJECT-TECHNOLOGY/dp/4274224546/ref=sr_1_1?dchild=1&hvadid=384738351742&hvdev=c&jp-ad-ap=0&keywords=%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0+%E7%AC%AC2%E7%89%88&qid=1604033085&sr=8-1&tag=yahhyd-22)
 - [アジャイルサムライ − 達人開発者への道](https://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%82%B5%E3%83%A0%E3%83%A9%E3%82%A4%E2%88%92%E9%81%94%E4%BA%BA%E9%96%8B%E7%99%BA%E8%80%85%E3%81%B8%E3%81%AE%E9%81%93%E2%88%92-Jonathan-Rasmusson/dp/4274068560/ref=sr_1_1?dchild=1&hvadid=335159083613&hvdev=c&jp-ad-ap=0&keywords=%E3%82%B5%E3%83%A0%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB&qid=1604033234&sr=8-1&tag=yahhyd-22)
-
