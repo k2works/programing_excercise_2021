@@ -20,6 +20,12 @@ class Money:
     def __hash__(self) -> int:
         return hash((self.amount, self.currency))
 
+    def add(self, o: object) -> object:
+        if self.currency != o.currency:
+            raise ValueError('通貨が異なります')
+        return Money(self.amount + o.amount, self.currency)
+
+
 class TestMoney(unittest.TestCase):
     def setUp(self) -> None:
         self.千円 = Money(1000, 'JPY')
@@ -41,6 +47,12 @@ class TestMoney(unittest.TestCase):
         財布 = {self.千円}
         self.assertTrue(self.千円 in 財布)
         self.assertFalse(self.千ドル in 財布)
+
+    def test_金額を計算する(self):
+        二千円 = self.千円.add(Money(1000, 'JPY'))
+        self.assertEqual(二千円, Money(2000, 'JPY'))
+        with self.assertRaises(ValueError, msg='通貨が異なります'):
+            self.千円.add(Money(1000, 'USD'))
 
 
 unittest.main(argv=[''], verbosity=2, exit=False)
