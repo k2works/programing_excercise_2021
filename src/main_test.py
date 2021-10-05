@@ -14,6 +14,9 @@ class Money:
         else:
             return f'{self.amount}{self.currency}'
 
+    def __eq__(self, o: object) -> bool:
+        return self.amount == o.amount and self.currency == o.currency
+
 class TestMoney(unittest.TestCase):
     def setUp(self) -> None:
         self.千円 = Money(1000, 'JPY')
@@ -26,5 +29,9 @@ class TestMoney(unittest.TestCase):
 
     def test_外貨金額を表示する(self):
         self.assertEqual(str(self.千ドル), '$1000')
+
+    def test_金額を比較する(self):
+        self.assertEqual(self.千円, Money(1000, 'JPY'))
+        self.assertNotEqual(self.千円, Money(1000, 'USD'))
 
 unittest.main(argv=[''], verbosity=2, exit=False)
