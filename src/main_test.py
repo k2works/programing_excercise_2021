@@ -26,6 +26,7 @@ class FibonacciTest(unittest.TestCase):
         self.fib = Fibonacci()
         self.recursive = FibonacciRecursive()
         self.loop = FibonacciLoop()
+        self.general_term = FibonacciGeneralTerm()
         
     def test_fibonacci(self):
         cases = [[0, 0], [1, 1], [2, 1], [3, 2], [4, 3], [5, 5]]
@@ -40,15 +41,11 @@ class FibonacciTest(unittest.TestCase):
         self.assertEqual(self.loop.exec(40), 102334155)
 
     def test_large_number_general_term(self):
-        self.assertEqual(self.fib.general_term(40), 102334155)
+        self.assertEqual(self.general_term.exec(40), 102334155)
 
 
 class Fibonacci:
-    def general_term(self, number):
-        a = ((1 + math.sqrt(5)) / 2)**number
-        b = ((1 - math.sqrt(5)) / 2)**number
-        return round(((a - b) / math.sqrt(5)))
-
+    pass
 class FibonacciRecursive:
     def exec(self, number, memo={}):
         if number == 0:
@@ -72,6 +69,12 @@ class FibonacciLoop:
             b = c
             c = a + b
         return c
+
+class FibonacciGeneralTerm:
+    def exec(self, number):
+        a = ((1 + math.sqrt(5)) / 2)**number
+        b = ((1 - math.sqrt(5)) / 2)**number
+        return round(((a - b) / math.sqrt(5)))
 
 
 
