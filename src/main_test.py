@@ -1,5 +1,6 @@
 # %%
 # Doctest
+import math
 import numbers
 import unittest
 import doctest
@@ -36,6 +37,9 @@ class FibonacciTest(unittest.TestCase):
     def test_large_number_calc2(self):
         self.assertEqual(self.fib.calc2(40), 102334155)
 
+    def test_large_number_calc3(self):
+        self.assertEqual(self.fib.calc3(40), 102334155)
+
 
 class Fibonacci:
     def calc(self, number, memo = {}):
@@ -59,6 +63,11 @@ class Fibonacci:
             b = c
             c = a + b
         return c
+
+    def calc3(self, number):
+        a = ((1 + math.sqrt(5)) / 2)**number
+        b = ((1 - math.sqrt(5)) / 2)**number
+        return round(((a - b) / math.sqrt(5)))
 
 
 unittest.main(argv=[''], verbosity=2, exit=False)
