@@ -33,6 +33,14 @@ npm init -y
 npm install --save-dev browser-sync jest @babel/core @babel/cli @babel/preset-env @babel/register
 ```
 
+```bash
+gem install minitest
+gem install ruby-debug-ide
+gem install minitest-reporters
+gem install profile
+gem install win32console
+```
+
 **[⬆ back to top](#構成)**
 
 ### 配置
