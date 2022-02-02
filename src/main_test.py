@@ -33,6 +33,9 @@ class FibonacciTest(unittest.TestCase):
     def test_large_number(self):
         self.assertEqual(self.fib.calc(40), 102334155)
 
+    def test_large_number_calc2(self):
+        self.assertEqual(self.fib.calc2(40), 102334155)
+
 
 class Fibonacci:
     def calc(self, number, memo = {}):
@@ -47,7 +50,15 @@ class Fibonacci:
         memo[number] = self.calc(number - 1, memo) + self.calc(number - 2, memo)
         return memo[number]
         
-
+    def calc2(self, number):
+        a = 0
+        b = 1
+        c = 0
+        for i in range(number):
+            a = b
+            b = c
+            c = a + b
+        return c
 
 
 unittest.main(argv=[''], verbosity=2, exit=False)
