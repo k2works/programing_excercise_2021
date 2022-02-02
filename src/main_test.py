@@ -21,8 +21,10 @@ doctest.testmod(verbose=True)
 
 class FibonacciTest(unittest.TestCase):
     def test_fibonacci(self):
-        self.assertEqual(0, fib(0))
-        self.assertEqual(1, fib(1))
+        cases = [[0, 0], [1, 1]]
+        for expected, actual in cases:
+            with self.subTest(expected=expected, actual=actual):
+                self.assertEqual(fib(expected), actual)
 
 
 def fib(n):
