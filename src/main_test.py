@@ -32,13 +32,13 @@ class FibonacciTest(unittest.TestCase):
 
 
 class Fibonacci:
-    def fib(self, n):
-        if n == 0:
+    def fib(self, number):
+        if number == 0:
             return 0
-        if n <= 2:
+        if number <= 2:
             return 1
 
-        return self.fib(n - 1) + self.fib(n - 2)
+        return self.fib(number - 1) + self.fib(number - 2)
 
 
 
