@@ -22,8 +22,12 @@ doctest.testmod(verbose=True)
 class FibonacciTest(unittest.TestCase):
     def test_fibonacci(self):
         self.assertEqual(0, fib(0))
+        self.assertEqual(1, fib(1))
+
 
 def fib(n):
-    return 0
+    if n == 0: return 0
+    return 1
+
 
 unittest.main(argv=[''], verbosity=2, exit=False)
