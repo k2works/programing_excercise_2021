@@ -1,24 +1,7 @@
 # %%
-# Doctest
 import math
-import numbers
 import unittest
 import doctest
-
-
-def add(a, b):
-    """Return the sum of a and b.
-    >>> add(2, 2)
-    4
-    """
-    sum = a
-    return sum
-
-
-doctest.testmod(verbose=True)
-
-# %%
-# Unittest
 
 
 class FibonacciTest(unittest.TestCase):
@@ -26,7 +9,7 @@ class FibonacciTest(unittest.TestCase):
         self.recursive = Fibonacci(FibonacciRecursive())
         self.loop = Fibonacci(FibonacciLoop())
         self.general_term = Fibonacci(FibonacciGeneralTerm())
-        
+
     def test_fibonacci(self):
         cases = [[0, 0], [1, 1], [2, 1], [3, 2], [4, 3], [5, 5]]
         for number, expected in cases:
@@ -48,7 +31,13 @@ class Fibonacci:
         self.algorithm = algorithm
 
     def exec(self, number):
+        """Return the fibonaaci number of the given number.
+        >>> command = Fibonacci(FibonacciRecursive())
+        >>> command.exec(4)
+        4
+        """
         return self.algorithm.exec(number)
+
 
 class FibonacciRecursive:
     def exec(self, number, memo={}):
@@ -60,9 +49,11 @@ class FibonacciRecursive:
         if number in memo:
             return memo[number]
 
-        memo[number] = self.exec(number - 1, memo) + self.exec(number - 2, memo)
+        memo[number] = self.exec(number - 1, memo) + \
+            self.exec(number - 2, memo)
         return memo[number]
-        
+
+
 class FibonacciLoop:
     def exec(self, number):
         a = 0
@@ -74,6 +65,7 @@ class FibonacciLoop:
             c = a + b
         return c
 
+
 class FibonacciGeneralTerm:
     def exec(self, number):
         a = ((1 + math.sqrt(5)) / 2)**number
@@ -81,5 +73,5 @@ class FibonacciGeneralTerm:
         return round(((a - b) / math.sqrt(5)))
 
 
-
 unittest.main(argv=[''], verbosity=2, exit=False)
+doctest.testmod(verbose=True)
