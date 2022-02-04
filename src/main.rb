@@ -8,6 +8,7 @@ class FibonacciTest < Minitest::Test
   def setup
     @fib = Fibonacci
     @recursive = FibonacciRecursive.new
+    @loop = FibonacciLoop.new
   end
 
   def test_fibonacci
@@ -22,7 +23,7 @@ class FibonacciTest < Minitest::Test
   end
 
   def test_large_number_loop
-    assert_equal 102_334_155, @fib.loop(40)
+    assert_equal 102_334_155, @loop.exec(40)
   end
 
   def test_large_number_general_term
@@ -31,18 +32,6 @@ class FibonacciTest < Minitest::Test
 end
 
 class Fibonacci
-  def self.loop(number)
-    a = 0
-    b = 1
-    c = 0
-    (0...number).each do |i|
-      a = b
-      b = c
-      c = a + b
-    end
-    c
-  end
-
   def self.general_term(number)
     a = ((1 + Math.sqrt(5)) / 2)**number
     b = ((1 - Math.sqrt(5)) / 2)**number
@@ -57,4 +46,19 @@ class FibonacciRecursive
 
     memo[number] ||= exec(number - 1, memo) + exec(number - 2, memo)
   end
+end
+
+class FibonacciLoop
+  def exec(number)
+    a = 0
+    b = 1
+    c = 0
+    (0...number).each do |i|
+      a = b
+      b = c
+      c = a + b
+    end
+    c
+  end
+
 end
