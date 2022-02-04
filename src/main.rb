@@ -29,6 +29,13 @@ class FibonacciTest < Minitest::Test
   def test_large_number_general_term
     assert_equal 102_334_155, @general_term.exec(40)
   end
+
+  def test_invalid_number
+    result = assert_raises RuntimeError do
+      @recursive.exec(-1) 
+    end
+    assert_equal 'マイナスの値は指定できません', result.message
+  end
 end
 
 class Fibonacci
@@ -37,6 +44,7 @@ class Fibonacci
   end
 
   def exec(number)
+    raise RuntimeError.new('マイナスの値は指定できません') if number < 0
     @algorithm.exec(number)
   end
 end
