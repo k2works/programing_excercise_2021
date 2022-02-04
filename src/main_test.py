@@ -25,6 +25,10 @@ class TestFibonacci(unittest.TestCase):
     def test_large_number_general_term(self):
         self.assertEqual(self.general_term.exec(40), 102_334_155)
 
+    def test_invalid_number(self):
+        with self.assertRaises(ValueError, msg='マイナスの値は指定できません'):
+            self.recursive.exec(-1)
+
 
 
 class Fibonacci:
@@ -32,6 +36,8 @@ class Fibonacci:
         self.algorithm = algorithm
 
     def exec(self, number):
+        if number < 0:
+            raise ValueError('マイナスの値は指定できません')
         return self.algorithm.exec(number)
 
 
