@@ -15,13 +15,17 @@ class FibonacciTest < Minitest::Test
       assert_equal i[1], @fib.calc(i[0])
     end
   end
+
+  def test_large_number
+    assert_equal 102_334_155, @fib.calc(40)
+  end
 end
 
 class Fibonacci
-  def self.calc(number)
+  def self.calc(number, memo={})
     return 0 if number.zero?
     return 1 if number == 1
 
-    calc(number - 1) + calc(number - 2)
+    memo[number] ||= calc(number - 1, memo) + calc(number - 2, memo)
   end
 end
