@@ -12,16 +12,16 @@ class FibonacciTest < Minitest::Test
   def test_fibonacci
     cases = [[0,0], [1,1], [2,1], [3,2], [4,3]]
     cases.each do |i|
-      assert_equal i[1], @fib.fib(i[0])
+      assert_equal i[1], @fib.calc(i[0])
     end
   end
 end
 
 class Fibonacci
-  def self.fib(number)
+  def self.calc(number)
     return 0 if number.zero?
     return 1 if number == 1
 
-    fib(number - 1) + fib(number - 2)
+    calc(number - 1) + calc(number - 2)
   end
 end
