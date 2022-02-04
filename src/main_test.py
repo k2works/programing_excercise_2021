@@ -6,10 +6,9 @@ from pkg_resources import find_distributions
 
 class TestFibonacci(unittest.TestCase):
     def setUp(self) -> None:
-        self.fib = Fibonacci()
-        self.recursive = FibonacciRecursive()
-        self.loop = FibonacciLoop()
-        self.general_term = FibonacciGeneralTerm()
+        self.recursive = Fibonacci(FibonacciRecursive())
+        self.loop = Fibonacci(FibonacciLoop())
+        self.general_term = Fibonacci(FibonacciGeneralTerm())
 
     def test_fibonacci(self):
         cases = [[0, 0], [1, 1], [2, 1], [3, 2], [4, 3], [5, 5]]
@@ -28,7 +27,11 @@ class TestFibonacci(unittest.TestCase):
 
 
 class Fibonacci:
-    pass
+    def __init__(self, algorithm) -> None:
+        self.algorithm = algorithm
+
+    def exec(self, number):
+        return self.algorithm.exec(number)
 
 
 class FibonacciRecursive:
