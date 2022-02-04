@@ -23,6 +23,10 @@ class FibonacciTest < Minitest::Test
   def test_large_number_2
     assert_equal 102_334_155, @fib.calc2(40)
   end
+
+  def test_large_number_3
+    assert_equal 102_334_155, @fib.calc3(40)
+  end
 end
 
 class Fibonacci
@@ -43,5 +47,11 @@ class Fibonacci
       c = a + b
     end
     c
+  end
+
+  def self.calc3(number)
+    a = ((1 + Math.sqrt(5)) / 2)**number
+    b = ((1 - Math.sqrt(5)) / 2)**number
+    ((a - b) / Math.sqrt(5)).round
   end
 end
