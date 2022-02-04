@@ -6,10 +6,15 @@ require 'minitest/autorun'
 
 class FibonacciTest < Minitest::Test
   def fib(n)
-    0
+    return 0 if n.zero?
+
+    1
   end
 
   def test_fibonacci
-    assert_equal 0, fib(0)
+    cases = [[0,0], [1,1]]
+    cases.each do |i|
+      assert_equal i[1], fib(i[0])
+    end
   end
 end
