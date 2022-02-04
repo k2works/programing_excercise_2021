@@ -6,10 +6,9 @@ require 'minitest/autorun'
 
 class FibonacciTest < Minitest::Test
   def setup
-    @fib = Fibonacci
-    @recursive = FibonacciRecursive.new
-    @loop = FibonacciLoop.new
-    @general_term = FibonacciGeneralTerm.new
+    @recursive = Fibonacci.new(FibonacciRecursive.new)
+    @loop = Fibonacci.new(FibonacciLoop.new)
+    @general_term = Fibonacci.new(FibonacciGeneralTerm.new)
   end
 
   def test_fibonacci
@@ -33,6 +32,13 @@ class FibonacciTest < Minitest::Test
 end
 
 class Fibonacci
+  def initialize(algorithm)
+    @algorithm = algorithm
+  end
+
+  def exec(number)
+    @algorithm.exec(number)
+  end
 end
 
 class FibonacciRecursive
