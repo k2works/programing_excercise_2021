@@ -19,11 +19,12 @@ class TestFibonacci(unittest.TestCase):
     def test_large_number_recursive(self):
         self.assertEqual(self.recursive.exec(40), 102_334_155)
 
-    def test_large_number_2(self):
+    def test_large_number_loop(self):
         self.assertEqual(self.loop.exec(40), 102_334_155)
 
-    def test_large_number_3(self):
+    def test_large_number_general_term(self):
         self.assertEqual(self.general_term.exec(40), 102_334_155)
+
 
 
 class Fibonacci:
