@@ -2,6 +2,7 @@ import math
 import unittest
 import doctest
 
+
 class TestFibonacci(unittest.TestCase):
     def setUp(self) -> None:
         self.recursive = Fibonacci(FibonacciRecursive())
@@ -26,7 +27,6 @@ class TestFibonacci(unittest.TestCase):
     def test_invalid_number(self):
         with self.assertRaises(ValueError):
             self.recursive.exec(-1)
-
 
 
 class Fibonacci:
