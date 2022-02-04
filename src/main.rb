@@ -18,10 +18,10 @@ class FibonacciTest < Minitest::Test
 end
 
 class Fibonacci
-  def self.fib(n)
-    return 0 if n.zero?
-    return 1 if n == 1
+  def self.fib(number)
+    return 0 if number.zero?
+    return 1 if number == 1
 
-    fib(n - 1) + fib(n - 2)
+    fib(number - 1) + fib(number - 2)
   end
 end
