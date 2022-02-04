@@ -3,8 +3,10 @@ import unittest
 
 class TestFibonacci(unittest.TestCase):
     def test_fibonacci(self):
-        self.assertEquals(fib(0), 0)
-        self.assertEquals(fib(1), 1)
+        cases = [[0, 0], [1, 1]]
+        for number, expected in cases:
+            with self.subTest(number=number, expected=expected):
+                self.assertEqual(fib(number), expected)
 
 
 def fib(n):
