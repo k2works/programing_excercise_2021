@@ -34,7 +34,7 @@ class Fibonacci:
         self.algorithm = algorithm
 
     def exec(self, number):
-        """数値実験に対応するフィボナッチ数を返す
+        """数字に対応するフィボナッチ数を返す
         >>> command = Fibonacci(FibonacciRecursive())
         >>> command.exec(4)
         3
