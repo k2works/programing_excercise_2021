@@ -13,15 +13,23 @@ class TestFibonacci(unittest.TestCase):
             with self.subTest(number=number, expected=expected):
                 self.assertEqual(self.fib.calc(number), expected)
 
+    def test_large_number(self):
+        self.assertEqual(self.fib.calc(40), 102_334_155)
+
 
 class Fibonacci:
-    def calc(self, number):
+    def calc(self, number, memo={}):
         if number == 0:
             return 0
         if number <= 2:
             return 1
 
-        return self.calc(number - 1) + self.calc(number - 2)
+        if number in memo:
+            return memo[number]
+
+        memo[number] = self.calc(number - 1, memo) + \
+            self.calc(number - 2, memo)
+        return memo[number]
 
 
 unittest.main(argv=[''], verbosity=2, exit=False)
