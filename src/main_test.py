@@ -1,8 +1,6 @@
 import math
 import unittest
-
-from pkg_resources import find_distributions
-
+import doctest
 
 class TestFibonacci(unittest.TestCase):
     def setUp(self) -> None:
@@ -26,7 +24,7 @@ class TestFibonacci(unittest.TestCase):
         self.assertEqual(self.general_term.exec(40), 102_334_155)
 
     def test_invalid_number(self):
-        with self.assertRaises(ValueError, msg='マイナスの値は指定できません'):
+        with self.assertRaises(ValueError):
             self.recursive.exec(-1)
 
 
@@ -36,6 +34,11 @@ class Fibonacci:
         self.algorithm = algorithm
 
     def exec(self, number):
+        """数値実験に対応するフィボナッチ数を返す
+        >>> command = Fibonacci(FibonacciRecursive())
+        >>> command.exec(4)
+        3
+        """
         if number < 0:
             raise ValueError('マイナスの値は指定できません')
         return self.algorithm.exec(number)
@@ -76,3 +79,4 @@ class FibonacciGeneralTerm:
 
 
 unittest.main(argv=[''], verbosity=2, exit=False)
+doctest.testmod(verbose=True)
