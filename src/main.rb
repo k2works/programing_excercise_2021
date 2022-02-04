@@ -7,17 +7,18 @@ require 'minitest/autorun'
 class FibonacciTest < Minitest::Test
   def setup
     @fib = Fibonacci
+    @recursive = FibonacciRecursive.new
   end
 
   def test_fibonacci
     cases = [[0,0], [1,1], [2,1], [3,2], [4,3]]
     cases.each do |i|
-      assert_equal i[1], @fib.recursive(i[0])
+      assert_equal i[1], @recursive.exec(i[0])
     end
   end
 
   def test_large_number_recursive
-    assert_equal 102_334_155, @fib.recursive(40)
+    assert_equal 102_334_155, @recursive.exec(40)
   end
 
   def test_large_number_loop
@@ -30,13 +31,6 @@ class FibonacciTest < Minitest::Test
 end
 
 class Fibonacci
-  def self.recursive(number, memo={})
-    return 0 if number.zero?
-    return 1 if number == 1
-
-    memo[number] ||= recursive(number - 1, memo) + recursive(number - 2, memo)
-  end
-
   def self.loop(number)
     a = 0
     b = 1
@@ -53,5 +47,14 @@ class Fibonacci
     a = ((1 + Math.sqrt(5)) / 2)**number
     b = ((1 - Math.sqrt(5)) / 2)**number
     ((a - b) / Math.sqrt(5)).round
+  end
+end
+
+class FibonacciRecursive
+  def exec(number, memo={})
+    return 0 if number.zero?
+    return 1 if number == 1
+
+    memo[number] ||= exec(number - 1, memo) + exec(number - 2, memo)
   end
 end
