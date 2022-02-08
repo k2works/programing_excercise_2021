@@ -11,9 +11,9 @@ class FibonacciTest < Minitest::Test
     end
 
     def test_fibonacci
-      cases = [[0,0],[1,1],[2,1],[3,2],[4,3],[5,5]]
-      cases.each do |i|
-        assert_equal i[1], @fib.calc(i[0])
+      cases = [[0,0],[1,1],[2,1],[3, 2],[4,3],[5, 5]]
+      cases.each do |input, expected|
+        assert_equal expected, @fib.calc(input)
       end
     end
 
@@ -28,20 +28,20 @@ class FibonacciTest < Minitest::Test
     end
 
     def test_マイナスの値はエラーを返す
-      result = assert_raises RuntimeError do
+      result = assert_raises(RuntimeError, 'マイナスの値は指定できません') do
         @fib.calc(-1)
       end
-      assert_equal 'マイナスの値は無効です', result.message
+      assert_equal 'マイナスの値は指定できません', result.message
     end
   end
-
 end
 
 class Fibonacci
-  def self.calc(n, memo={})
-    raise RuntimeError.new('マイナスの値は無効です') if n < 0    
-    return 0 if n.zero?
-    return 1 if n == 1
-    memo[n] ||= calc(n - 1, memo) + calc(n - 2, memo)
+  def self.calc(number, memo={})
+    raise RuntimeError, 'マイナスの値は指定できません' if number < 0
+    return memo[number] if memo[number]
+    return 0 if number ==0
+    return 1 if number ==1
+    memo[number] = calc(number-1, memo) + calc(number-2, memo) 
   end
 end
